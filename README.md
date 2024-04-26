@@ -4,7 +4,7 @@
 This DevOps project aims to provide a robust infrastructure for deploying and managing various components of modern applications. By leveraging containerization, automation, and cloud-native technologies, we ensure scalability, reliability, and security for the application.
 
 ## Features
-- **Hosting**: The application would be deployed  on the Azure cloud platform for scalable ,reliable hosting.
+- **Hosting**: The application would be deployed  on the Azure cloud platform for scalable and reliable hosting.
 - **Containerization**: Docker and Kubernetes would be used for container orchestration, enabling seamless deployment and scaling of your applications.
 - **DNS**: DNS services like Route 53 or Cloud DNS would be used to manage domain names and route traffic efficiently using DNS 
 - **SSL**: The application would be secured with SSL/TLS certificates to encrypt data transmission and enhance security.
