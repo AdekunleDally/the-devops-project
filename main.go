@@ -1,15 +1,25 @@
 package main
-  
+
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World")
+func handler(w http.ResponseWriter, req *http.Request) {
+	if req.Method == "POST" {
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprint(w, "Hello World")
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(w, "Not a post request")
+	}
 }
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/api/v1/health", handler)
 	fmt.Println("Server is listening on port 8080...")
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatalf("Server Error: %v", err)
+	}
 }
