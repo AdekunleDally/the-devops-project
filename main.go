@@ -17,8 +17,8 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 func main() {
 	http.HandleFunc("/api/v1/health", handler)
-	fmt.Println("Server is listening on port 8080...")
-	err := http.ListenAndServe(":8080", nil)
+	fmt.Println("Server is listening on port 8082...")
+	err := http.ListenAndServe(":8082", nil)
 	if err != nil {
 		log.Fatalf("Server Error: %v", err)
 	}
